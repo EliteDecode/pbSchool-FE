@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.login_bg {
+  background: url('../images/auth/logImg3.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: overlay;
+  background-position: 0px 0px;
+}
+
+.register_bg {
+  background: url('../images/auth/logImg3.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: overlay;
+  background-position: 0px 0px;
+}
+
+.auth_head {
+  overflow: hidden !important;
+}
