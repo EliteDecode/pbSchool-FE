@@ -8,21 +8,20 @@ import MainLayout from 'layout/MainLayout';
 import MinimalLayout from 'layout/MinimalLayout';
 import { useSelector } from 'react-redux';
 
+//render - Lessons
+const Lessons = Loadable(lazy(() => import('pages/Lessons/Lessons')));
+
+//render - Courses
+
+const AllCourses = Loadable(lazy(() => import('pages/courses/AllCourses')));
+const ActiveCourses = Loadable(lazy(() => import('pages/courses/ActiveCourses')));
+
 // render - login
 const AuthLogin = Loadable(lazy(() => import('pages/authentication/Login')));
 const AuthRegister = Loadable(lazy(() => import('pages/authentication/Register')));
 
 // render - dashboard
 const DashboardDefault = Loadable(lazy(() => import('pages/dashboard')));
-
-// render - sample page
-const SamplePage = Loadable(lazy(() => import('pages/extra-pages/SamplePage')));
-
-// render - utilities
-const Typography = Loadable(lazy(() => import('pages/components-overview/Typography')));
-const Color = Loadable(lazy(() => import('pages/components-overview/Color')));
-const Shadow = Loadable(lazy(() => import('pages/components-overview/Shadow')));
-const AntIcons = Loadable(lazy(() => import('pages/components-overview/AntIcons')));
 
 // ==============================|| ROUTING RENDER ||============================== //
 
@@ -39,10 +38,6 @@ export default function ThemeRoutes() {
           element: <DashboardDefault />
         },
         {
-          path: 'color',
-          element: <Color />
-        },
-        {
           path: 'dashboard',
           children: [
             {
@@ -52,20 +47,16 @@ export default function ThemeRoutes() {
           ]
         },
         {
-          path: 'sample-page',
-          element: <SamplePage />
+          path: 'courses',
+          element: <AllCourses />
         },
         {
-          path: 'shadow',
-          element: <Shadow />
+          path: 'active_courses',
+          element: <ActiveCourses />
         },
         {
-          path: 'typography',
-          element: <Typography />
-        },
-        {
-          path: 'icons/ant',
-          element: <AntIcons />
+          path: 'lessons/:lessonId',
+          element: <Lessons />
         }
       ]
     },
